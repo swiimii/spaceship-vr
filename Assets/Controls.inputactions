@@ -1,0 +1,71 @@
+{
+    "name": "Controls",
+    "maps": [
+        {
+            "name": "custom",
+            "id": "62100aca-f4b4-43f6-908d-a913ceaa0acd",
+            "actions": [
+                {
+                    "name": "PrimaryStick",
+                    "type": "Value",
+                    "id": "acbe9398-f8e2-4296-ac59-ec733215aef8",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "SecondaryStick",
+                    "type": "Value",
+                    "id": "408546ee-8576-40b4-8cd2-50e8f17efc70",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Trigger",
+                    "type": "Button",
+                    "id": "de57c233-f6bf-48fc-8ef2-209b5fb1b135",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "020038d9-c44e-464f-9dbe-ea745f09f6cc",
+                    "path": "*/{Primary2DAxis}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PrimaryStick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6922f1d5-aa87-42c5-90fb-965bf7f63ed9",
+                    "path": "*/{Secondary2DAxis}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SecondaryStick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7869f10f-9525-4aaf-ba68-331d4d143f17",
+                    "path": "*/{PrimaryTrigger}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Trigger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
