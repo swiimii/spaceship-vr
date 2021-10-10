@@ -25,7 +25,7 @@ public class Player : MonoBehaviour, IDamageable
         {
             foreach (var controller in controllers)
             {
-                controller.GetComponent<UnityEngine.XR.Interaction.Toolkit.XRInteractorLineVisual>().enabled = true;
+                controller.GetComponent<UnityEngine.XR.Interaction.Toolkit.XRRayInteractor>().enabled = true;
                 controller.GetComponent<LineRenderer>().enabled = true;
                 controller.GetComponent<UnityEngine.XR.Interaction.Toolkit.XRInteractorLineVisual>().enabled = true;
             }
