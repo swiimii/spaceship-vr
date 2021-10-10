@@ -71,8 +71,8 @@ public class PlayerController : MonoBehaviour
         Vector2 movementInput;
         if (leftcontroller.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primary2DAxis, out movementInput) && movementInput.magnitude > .1f)
         {
-            var movespeed = 5f;
-            var rotateSpeed = 60f;
+            var movespeed = 6f;
+            var rotateSpeed = 80f;
 
             var movement = transform.forward * movementInput.y;
             var movementActual = Vector3.ProjectOnPlane(movement, transform.up);
@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
         Vector2 movementInput;
         if (rightcontroller.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primary2DAxis, out movementInput) && movementInput.magnitude > .1f)
         {
-            var rotateSpeed = 60f;
+            var rotateSpeed = 80f;
 
             transform.Rotate(movementInput.y * Time.deltaTime * rotateSpeed, 0, 0);
         }
