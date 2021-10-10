@@ -56,6 +56,7 @@ MonoBehaviour:
   bullet: {fileID: 1346229360985016206, guid: 5394bdb2ca3ad184d99b3fc7dcc5f8a1, type: 3}
   bulletSpawnPosition: {fileID: 7500554600894336604}
   direction: 1
+  deathSound: {fileID: 8300000, guid: 51622eeb6f52fcf4ab0e6977905e1fde, type: 3}
 --- !u!54 &6691896635916608151
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -93,9 +94,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 20
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -128,7 +129,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0

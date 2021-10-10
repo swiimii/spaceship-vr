@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour, IDamageable
 {
     public int maxHealth = 5, health;
-    public GameObject healthDisplay, failMenu, scoreDisplay;
+    public GameObject healthDisplay, failMenu, scoreDisplay, cockpit;
     public GameObject[] controllers;
     float highestHealthScale;
 
@@ -21,6 +21,10 @@ public class Player : MonoBehaviour, IDamageable
     {
         health -= damage;
         healthDisplay.transform.localScale = new Vector3(healthDisplay.transform.localScale.x, Mathf.Max(0, highestHealthScale * health / maxHealth), healthDisplay.transform.localScale.z);
+        if (health >= 0)
+        {
+            cockpit.GetComponent<AudioSource>().Play();
+        }
         if (health <= 0)
         {
             foreach (var controller in controllers)

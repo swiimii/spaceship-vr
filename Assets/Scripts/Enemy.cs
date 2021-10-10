@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour, IDamageable
     public GameObject bullet;
     public GameObject bulletSpawnPosition;
     public int direction = 1;
+    public AudioClip deathSound;
+    private bool isAlive = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -75,10 +77,10 @@ public class Enemy : MonoBehaviour, IDamageable
     IEnumerator DestroyEnemy()
     {
         GetComponent<TrailRenderer>().emitting = true;
-        
+        GetComponent<AudioSource>().PlayOneShot(deathSound);
+        PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + 1);
         yield return new WaitForSeconds(1f);
         print("Destoyed!");
-        PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + 1);
         Destroy(this.gameObject);
     }
 
@@ -140,8 +142,9 @@ public class Enemy : MonoBehaviour, IDamageable
     public void OnDamage(int damage)
     {
         health -= damage;
-        if (health <= 0)
+        if (health <= 0 && isAlive)
         {
+            isAlive = false;
             StopCoroutine(EnemyActions());
             StartCoroutine(DestroyEnemy());
         }
